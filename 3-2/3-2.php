@@ -13,7 +13,7 @@ function goukei($tanka, $kosu){
    //繰り返し構文
    $i = 0;
    foreach ($fruits as $key => $value) {
-       if($i>=3){break;}
+       if($i>=3){break};
    
     $price = goukei($value, $fruitsv[$i]);
     echo "${key}は, ${price}円です。";

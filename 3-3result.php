@@ -1,6 +1,6 @@
 <?php
 $rnum = $_GET['my_number'];
-$select=$rnum[array_rand( $rnum )];
+$select=$rnum[array_rand( [$rnum] )];
 ?>
 <p><?php echo date("Y/m/d ", time());?>の運勢</p>
 <p>選ばれた数字は<?php echo $select; ?></p>

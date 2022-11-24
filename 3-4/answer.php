@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php 
 //[question.php]から送られてきた名前の変数、選択した回答、問題の答えの変数を作成
 $my_name = $_POST['my_name'];
@@ -18,9 +19,9 @@ $truecom=$_POST['correct3'];
 function result($myselect,$true){
   if($myselect==$true){
   echo "正解！";
-}else{
+  }else{
   echo "残念・・・";
-}
+  }
 }
 ?>
 <p><!--POST通信で送られてきた名前を表示--><?php echo $my_name; ?>さんの結果は・・・？</p>

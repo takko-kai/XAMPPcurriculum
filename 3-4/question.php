@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 //POST送信で送られてきた名前を受け取って変数を作成
 $my_name = $_POST['my_name'];
@@ -19,26 +20,23 @@ $truecom=$coms[1];
 
     <h2>①ネットワークのポート番号は何番？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-    <?php  
-    $portnums = [80, 22, 20, 21];
-    foreach($portnums as $i=>$portnum){?>
-        <input type="radio" name="number" value="<?php echo $i ?>"/><?php echo $portnum;
-}        
+<?php
+    foreach ($portnums as $portnum) {
+    echo "<input type='radio' name='number' value='${portnum}'>${portnum}";
+}
 ?>
     <h2>②Webページを作成するための言語は？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-    <?php  
-    $langs = ['PHP', 'Python', 'JAVA', 'HTML'];
-    foreach($langs as $i=>$lang){?>
-        <input type="radio" name="language" value="<?php echo $i ?>"/><?php echo $lang;
+<?php  
+    foreach($langs as $lang){
+    echo "<input type='radio' name='language' value='${lang}'>${lang}";
 }        
 ?>
     <h2>③MySQLで情報を取得するためのコマンドは？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
-    <?php 
-    $coms=['join', 'select', 'insert', 'update']; 
-    foreach($coms as $i=>$com){?>
-        <input type="radio" name="command" value="<?php echo $i ?>"/><?php echo $com;
+<?php 
+    foreach($coms as $com){
+    echo "<input type='radio' name='command' value='${com}'>${com}";
 }        
 ?>
 

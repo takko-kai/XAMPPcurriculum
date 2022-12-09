@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8章チェックテスト</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <select id="select_items" onchange="changeLang()">
+        <option id="select" value="select">選択してください</option>
+        <option id="selected_jpn" value="selected_jpn">日本語</option>
+        <option id="selected_en" value="selected_en">English</option>
+        <option id="selected_all" value="selected_all">全て表示</option>
+    </select>
+    <table>
+        <tr id="jp_str">
+            <th>日本</th>
+            <td>こんにちは</td>
+            <td>ありがとう</td>
+            <td>さようなら</td>
+        </tr>
+        <tr id="en_str">
+            <th>English</th>
+            <td>Hello</td>
+            <td>Thank you</td>
+            <td>Good Bye</td>
+        </tr>
+    </table>
+
+    <script>
+        //①onchangeで使用されている関数の中身を実装してください。
+        function changeLang(){
+          let jp_str =document.getElementById("jp_str");
+          let en_str =document.getElementById("en_str");
+
+          if(document.getElementById("select_items")){
+            let id=document.getElementById("select_items").value
+            console.log(id);
+            if (id=='selected_jpn'){
+              jp_str.style.display="" ;
+              en_str.style.display="none" ;
+            }else if(id=='selected_en'){
+              jp_str.style.display="none" ;
+              en_str.style.display="" ;
+            }else if(id=='selected_all'){
+              jp_str.style.display="" ;
+              en_str.style.display="" ;
+            }else{
+              jp_str.style.display="none" ;
+              en_str.style.display="none" ; 
+            }
+          }
+        }
+    </script>
+</body>
+</html>
